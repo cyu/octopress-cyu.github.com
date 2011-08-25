@@ -7,7 +7,7 @@ So far, I've [dabble with pieces of HTML5](easy-storage-for-html5-applications.h
 
 The application I've decided to build is a timer application - basically, you enter a time interval (in hours, minutes, seconds), and it'll notify you when that time has been reached.  I start things off by creating the basics of what the application would look like via HTML:
 
-{% highlight html %}
+{% codeblock lang:html %}
 <!doctype html>
 <html>
 <head>
@@ -30,7 +30,7 @@ The application I've decided to build is a timer application - basically, you en
   <script src=thymer.js></script>
 </body>
 </html>
-{% endhighlight %}
+{% endcodeblock %}
 
 Couple of notes about the above snippet:
 
@@ -40,7 +40,7 @@ Couple of notes about the above snippet:
 
 Next comes the *thymer.js* script.  Nothing HTML5 specific here, I'm just putting the code here for completeness.
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 $().ready(function(){
   var timerList = $('#timer-list');
   var timers = [];
@@ -144,7 +144,7 @@ $().ready(function(){
     return false;
   });
 });
-{% endhighlight %}
+{% endcodeblock %}
 
 I now have a basic timer application.  Now for the HTML5 goodness.
 
@@ -152,7 +152,7 @@ For any desktop to be truly useful (desktop or web), it needs to be able to reme
 
 First, I update the *Timer* object so it can be converted to/from a save state:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 var Timer = function(name, seconds, started, finished) {
   this.name = name;
   this.seconds = seconds;
@@ -172,11 +172,11 @@ Timer.prototype = {
     };
   }
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 Then I save the timer array every time a new timer is created, and load the stored timers when the application starts:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 $('#add-timer-form form').submit(function(){
   var seconds = parseInt($('#secs').val()) +
       (parseInt($('#mins').val()) * 60) +
@@ -210,7 +210,7 @@ if ('localStorage' in window) {
     UpdateLoop.start();
   }
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 Some notes about the **Local Storage API**:
 

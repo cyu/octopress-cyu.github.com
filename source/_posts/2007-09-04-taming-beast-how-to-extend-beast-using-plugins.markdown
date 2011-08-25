@@ -21,7 +21,7 @@ Here are the important points to note:
 <h2>The Plugin Class</h2>
 Here's what's the plugin class should look like:
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
 module Beast
   module Plugins
     class StyleEditor < Beast::Plugin
@@ -48,7 +48,7 @@ module Beast
     end # end StyleEditor class
   end # end Plugins module
 end # end Beast module
-{% endhighlight %}
+{% endcodeblock %}
 
 You can see what <a href="http://svn.codeeg.com/beast/style_editor/lib/beast/plugins/style_editor.rb">the final source looks like here</a>.  Here are some things to note about this class:
 <ul>
@@ -61,16 +61,16 @@ You can see what <a href="http://svn.codeeg.com/beast/style_editor/lib/beast/plu
 <h2>Adding New Routes</h2>
 I needed to create some new routes for my <em>StylesController</em>, so I used the <em>route</em> method of the <em>Beast::Plugin</em> class to install them:
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
 # add this within the class scope of the StyleEditor
 route :resources, 'styles'
-{% endhighlight %}
+{% endcodeblock %}
 
 I'm using the RESTful syntax to creating routes here, but you can also use <em>:connect</em> and named routes as well.
 <h2>Updating the Beast Schema</h2>
 To update the Beast Schema, all I needed to do is to create a Schema class within the scope of your plugin class:
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
 class Schema < ActiveRecord::Migration
   def self.install
     create_table :style_options do |t|
@@ -92,20 +92,20 @@ class Schema < ActiveRecord::Migration
     drop_table :style_options
   end
 end # end Schema class
-{% endhighlight %}
+{% endcodeblock %}
 
 The code in <em>install/uninstall</em> methods will work just like the <em>up/down</em> methods in a typical migration class.  There is an issue where there's no support for handling db changes overtime -- hopefully someone will find a nice way to handle this (any takers?).
 <h2>Using the Rails Console</h2>
 At some point, you'll want to do some quick tests to make sure your plugin changes are working as you expect them to, and try to test them from the console.  If you have tried to this already, you'll quickly find that your changes for some reason won't work.  Don't fret, the reason why it doesn't work is because the plugins aren't initialize until the <em>Dispatcher</em> receives its first request.  So, if you do want to test your changes in the console, you'll need to run this command first:
-{% highlight ruby %}
+{% codeblock lang:ruby %}
 Dispatcher.send :prepare_application
-{% endhighlight %}
+{% endcodeblock %}
 <h2>Installing a Plugin</h2>
 Once you're done with your plugin, you'll need to install it.  This step is pretty easy.  First, install your beast plugins into <em>vendor/beast</em>, then run the plugin install method:
 
-{% highlight bash %}
+{% codeblock lang:bash %}
 script/runner 'Beast::Plugins::StyleEditor.install'
-{% endhighlight %}
+{% endcodeblock %}
 
 Some plugins might have some additional installation instructions, so I would suggest looking at the <em>README</em> file (and if you're developing on a plugin, make sure to put your install instructions in the README).
 <h2>That's It!</h2>

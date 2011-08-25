@@ -11,7 +11,7 @@ CORS, or Cross-Origin Resource Sharing is a specification that allows web applic
 
 Searching around, I found an CORS extension for Sinatra, which happened to be the framework I was using.  However, the extension didn't properly implement the spec, nor did it support CORS preflighting (required for more complex AJAX requests).  So I rolled my own, but as a Rack Middleware.  Here's an example of a Rackup that shows it in action (this example uses <a title="Rack::CORS Rubygem" href="http://rubygems.org/gems/rack-cors">Rack::CORS</a> in Sinatra app, but should be able to use it in any Rack compatible framework):
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
 require 'sinatra'
 require 'rack/cors'
 
@@ -33,7 +33,7 @@ end
 get '/file/at/*' do
   #...
 end
-{% endhighlight %}
+{% endcodeblock %}
 
 To get going with Rack::CORS, just install the rack-cors Gem.  To check out the source, see <a href="http://github.com/cyu/rack-cors">the project on Github</a>.
 

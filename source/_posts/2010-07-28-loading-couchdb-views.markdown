@@ -11,14 +11,14 @@ My first pass at it was a Ruby implementation, but was fragile since it found th
 
 <a title="loader.js" href="http://gist.github.com/492124">Here's the code</a>.  The script expects a <em>designs/</em> folder at the same level as the loader script, with a subfolder for each design document underneath.  A design folder should have a <em>.js</em> file for each view.  A view file looks like this:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 design.view = {
     map: function(doc) {
         emit(doc.created_at, null);
     },
     reduce: '_count'
 };
-{% endhighlight %}
+{% endcodeblock %}
 
 <a href="http://wiki.apache.org/couchdb/Document_Update_Handlers">CouchDB document update handlers</a> are supported as well by assigning a function to <strong>design.update</strong>.  Once your view files are ready, just run <strong>loader.js</strong> with the CouchDB database URL as the parameter:
 

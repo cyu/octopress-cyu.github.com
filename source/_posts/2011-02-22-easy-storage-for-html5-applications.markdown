@@ -9,7 +9,7 @@ A core component of HTML5 is the [localStorage API](http://diveintohtml5.org/sto
 
 So what if you can write an application, still all in client-side JavaScript, but store data centrally so it can be accessible on all devices and browsers?  This is what [Stor.IO](http://stor.io) does.  Here's some example code:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 <script src="http://stor.io/app_storage.js"></script>
 <script>
   window.appStorage.$.connect({email: 'my@emailaddress.com'});
@@ -18,13 +18,13 @@ So what if you can write an application, still all in client-side JavaScript, bu
   window.appStorage.getItem('foo'); // "bar"
   window.appStorage.foo; // "bar"
 </script>
-{% endhighlight %}
+{% endcodeblock %}
 
 Including the *app_storage.js* script creates the **appStorage** object on the browser window.  Next, you call the _connect_ method on the server object (_$_), passing in the identity of the user.  Currently, an email-only method of authenticating is available, as well as Twitter OAuth.   Once connected, the appStorage API behaves essentially like the localStorage API.  And it doesn't force you to store strings like localStorage does, meaning you don't need to serialize/deserialize objects to/from JSON.
 
 For reading data from Stor.IO, you'll need to wait on the server to identify the user and retrieve their data, and there's a _ready()_ handler available for that:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 <script>
 window.appStorage.$.ready(function(){
   var tasks = window.appStorage.tasks;
@@ -33,7 +33,7 @@ window.appStorage.$.ready(function(){
   }
 });
 </script>
-{% endhighlight %}
+{% endcodeblock %}
 
 Underneath, how Stor.IO works is that it creates an iframe and uses the [postMessage API](http://ajaxian.com/archives/cross-window-messaging-with-html-5-postmessage) to work around the same origin policy that handicaps Ajax calls.  The server is Sinatra app with the data being stored in MongoDB.  The data is isolated by the user identity and the application path, which is a substring the current URL up to the first directory path, so http://localhost/app1 and http://localhost/app2 will actually hold different data sets.
 

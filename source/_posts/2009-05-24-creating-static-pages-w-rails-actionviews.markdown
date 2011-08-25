@@ -14,14 +14,14 @@ Not seeing any solutions that fit my needs, I set out to come up with my own.  
 
 First, I needed to add a route for generating/displaying the reports:
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
 map.reports 'report/:year/:month/:day', :controller => 'report',
     :action => 'show', :year => nil, :month => nil, :day => nil
-{% endhighlight %}
+{% endcodeblock %}
 
 From here, I could just use the standard <strong>caches_page :show</strong> declaration, but that would only generate the page I wanted if I used <em>/report/2009/05/25 </em>as the URL.  What if I wanted <em>/report</em> to generate the report for the current week?  Well, you can do something like this:
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
 class ReportController < ApplicationController
   after_filter :cache_weekly_report, :only => :show
   
@@ -56,17 +56,17 @@ class ReportController < ApplicationController
     end
     
 end
-{% endhighlight %}
+{% endcodeblock %}
 
 The magic is in the <strong>after_filter</strong> method <strong>cache_weekly_report</strong>.  We basically use the same mechanism Rails page caching uses to save our new report page.  Now, calling <em>/report</em> will generate a static report at <em>/report/2009/05/25</em>, or whatever the current day is.
 
 The last thing to do is to make sure that the reports persist through new server deployments.  That can easily be done with a symlink in your capistrano script:
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
 task :symlink_reports do
   run "mkdir -p #{shared_path}/report; ln -nfs #{shared_path}/report #{release_path}/public/report"
 end
 after 'deploy:update_code', 'deploy:symlink_reports'
-{% endhighlight %}
+{% endcodeblock %}
 
 And that's it!  What do you think?  I'd love to know if there are any simpler solutions to this.

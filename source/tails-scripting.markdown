@@ -9,9 +9,9 @@ A Tails Script is basically a very simple JavaScript file ending with the *tails
 
 Like a Greasemonkey user script, a Tails Script has a metadata section describing how to install the plugin.  The metadata section starts with the *// ==TailsScript==* comment and ends with the *// ==/TailsScript==* comment.  Metadata values are defined the comment format:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 // @name value
-{% endhighlight %}
+{% endcodeblock %}
 
 The supported metadata values are:
 
@@ -24,9 +24,9 @@ When a Tails Script is executed, the contents of the script is loaded within a J
 
 The only method that Tails requires in the script is the __getURL__ function.  This function does not have any parameters and should return the URL of the link to render in the Tails view.  Not returning anything or returning *null* will result in the the link not rendering in the view.  The method can access the current microformat object by accessing the __object__ instance variable:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 getURL: function() { if (this.object.__name == 'hcard'){ /* generate URL... */ } }
-{% endhighlight %}
+{% endcodeblock %}
 
 In addition to __getURL()__, you can also specify the following function to further customize the behavior of your script:
 

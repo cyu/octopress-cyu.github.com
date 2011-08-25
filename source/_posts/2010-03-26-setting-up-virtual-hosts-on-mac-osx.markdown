@@ -12,14 +12,14 @@ First, add a new local domain to your <em>/etc/hosts</em> file:
 
 Next, you'll need to configure Apache with this new virtual host.  Fortunately, the default Apache config has this partially setup.  Open up <em>/etc/apache2/httpd.conf</em> and uncomment the following Include:
 
-{% highlight apache %}
+{% codeblock lang:apache %}
 # Virtual hosts
 #Include /private/etc/apache2/extra/httpd-vhosts.conf
-{% endhighlight %}
+{% endcodeblock %}
 
 Now, we need to add our virtual host to the <em>httpd-vhosts.conf </em>file referenced above.  The file already had a couple of sample configuration in it, but I commented out those and added the following:
 
-{% highlight apache %}
+{% codeblock lang:apache %}
 <VirtualHost *:80>
     DocumentRoot "/Library/WebServer/Documents"
     ServerName localhost
@@ -29,17 +29,17 @@ Now, we need to add our virtual host to the <em>httpd-vhosts.conf </em>file refe
     DocumentRoot "/usr/docs/devsite.local"
     ServerName devsite.local
 </VirtualHost>
-{% endhighlight %}
+{% endcodeblock %}
 
 This first entry will map localhost to its default document location (without it http://localhost won't work correctly).  The second entry maps my new domain.  Additionally, you'll want to make sure files in your new docs directory have adequate access permissions.  I ended adding a new Directory section to <em>httpd-vhosts.conf </em>file:
 
-{% highlight apache %}
+{% codeblock lang:apache %}
 <Directory "/usr/docs/devsite.local">
     Options Indexes FollowSymLinks MultiViews
     AllowOverride None
     Order allow,deny
     Allow from all
 </Directory>
-{% endhighlight %}
+{% endcodeblock %}
 
 Now all you have to do is put your web files in <em>/usr/docs/devsite.local</em>.  I originally had my new local domain map to <em>&lt;user dir&gt;/Sites/devsite.local</em>, but changed it because I would have to make sure Apache could access to all the directories leading up to those docs. So instead I just symlinked my http docs from my user directory into <em>/usr/docs.</em>

@@ -13,7 +13,7 @@ The Notification API is currently just a [draft spec](http://www.chromium.org/de
 
 First, I request permission to use the Notifications API when the first timer is created.  It's important to note that **you can only request permission on a user triggered event like a mouse click or key event.**  In Thymer's case, I request permission when the Enter key is pressed to submit a new timer:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 $('#add-timer-form input').keypress(function(event) {
   if (event.which == '13') { // Enter key
     event.preventDefault();
@@ -32,11 +32,11 @@ $('#add-timer-form input').keypress(function(event) {
     }
   }
 })
-{% endhighlight %}
+{% endcodeblock %}
 
 Then I create a notification when the timer ends:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 _alarm:function() {
   // show a notification if the browser supports it.
   if (window.webkitNotifications &&
@@ -46,7 +46,7 @@ _alarm:function() {
         'Thymer', '"' + this.name + '" timer has completed').show();
   }
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 Here's what the notification looks like:
 
@@ -62,19 +62,19 @@ The Audio Tag
 -------------
 So now I have a way to grab user's attention when a timer completes in Chrome, but what about other browsers?  How about playing an alarm sound when the timer completes?  This turned out to be pretty easy with the **&lt;audio&gt;** tag:
 
-{% highlight html %}
+{% codeblock lang:html %}
 <audio id=alarm-sound>
   <source src=alarm.mp3 type=audio/mpeg />
   <source src=alarm.ogg type=audio/ogg />
   <source src=alarm.wav type=audio/wav />
 </audio>
-{% endhighlight %}
+{% endcodeblock %}
 
 This sets up a audio clip that I can access from JavaScript via the element id.  Since I don't specify a **controls** or **autoplay** attribute, the audio won't play until I want it to.  I'm also specifying the three different sources for audio (gotta love proprietary sound formats).  Between MP3 &amp; Ogg Vorbis, all modern browsers should be covered, but I'm going to throw a WAV in there for completeness anyway.  I am concerned about how this will affect my footprint when I setup offline mode for Thymer, but that's an issue for a different post.
 
 Playing the audio from JavaScript is cake:
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 _alarm:function() {
   // show a notification if the browser supports it.
   if (window.webkitNotifications && window.webkitNotifications.checkPermission() == 0) {
@@ -84,7 +84,7 @@ _alarm:function() {
   // play the alarm sound
   document.getElementById('alarm-sound').play();
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 For more information about the Audio tag, I recommend [this article at &lt;html&gt;5doctor](http://html5doctor.com/native-audio-in-the-browser/).  In that article they have a helpful table showing the browser support for the different audio formats.
 

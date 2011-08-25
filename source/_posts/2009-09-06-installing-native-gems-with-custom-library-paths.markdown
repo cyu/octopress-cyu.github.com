@@ -9,10 +9,10 @@ A few weeks ago, I started using the <a href="http://github.com/toland/patron/tr
 
 A couple of days ago, <a href="http://paulstamatiou.com">Paul</a> brought to my attention that <a href="http://linuxmafia.com/faq/Admin/ld-lib-path.html">using LD_LIBRARY_PATH isn't a good thing</a>.  While I didn't necessarily think it was a big deal, it did peak my curiosity on how I would get this work without it.  Here's the command I finally used to get it to work:
 
-{% highlight bash %}
+{% codeblock lang:bash %}
 sudo env PATH="/opt/curl/bin:$PATH" gem install toland-patron \
     -v "0.4.1" --source http://gems.github.com \
     -- --with-ldflags="-Wl,-R/opt/curl/lib"
-{% endhighlight %}
+{% endcodeblock %}
 
 The key part is the <strong>--with-ldflags</strong> option at the very end.  The <strong>-Wl,-R&lt;path&gt;</strong> option adds the given path to the list of paths the linker will use to find libraries at runtime.  Hopefully, someone will find this information useful, since I couldn't find this information myself on the 'nets anywhere.
