@@ -1,0 +1,10 @@
+--- 
+wordpress_id: 28
+layout: post
+title: I got H4X3D!
+wordpress_url: http://blog.codeeg.com/2006/08/23/i-got-h4x3d/
+permalink: /2006/08/23/i-got-h4x3d.html
+---
+Imagine my surprise when just few minutes ago I did a (Windows Key + M) to show my desktop and <a title="funny image from Flickr" href="http://www.flickr.com/photos/jimlahey/222544043/">got this message</a>.  It took me a little while before I noticed the Safari window trimmings and realized what I was looking at.
+
+Since creating my Flickr background script, I've seen some amazing photos that took my breath away, but this one actually made my heart to skip a beat.

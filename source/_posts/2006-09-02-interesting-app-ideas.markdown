@@ -1,0 +1,13 @@
+--- 
+wordpress_id: 29
+layout: post
+title: Interesting App Ideas
+wordpress_url: http://blog.codeeg.com/2006/09/02/interesting-app-ideas/
+permalink: /2006/09/02/interesting-app-ideas.html
+---
+Here are a few ideas I have on some cool applications I would like to see.  Hopefully, someone will have some use for them, because I don't expect to ever have the time (or the complete interest) to implement them.
+<ol>
+	<li><strong>A Wiki Site that Charges the Reader. </strong> There are lot of wiki sites out there (<a title="\" href="http://blog.codeeg.com/%5C%22http://www.stikipad.com/%5C%22">stikipad</a>, <a title="\" href="http://blog.codeeg.com/%5C%22http://pbwiki.com/%5C%22">PBwiki</a>, <a title="\" href="http://blog.codeeg.com/%5C%22http://www.jotspot.com/%5C%22">Jotspot</a>) whose model is to charge the content creator for using the service, but I don't know of one that actually attempts to charge the content consumer.  You could offer various ways to charge the consumer from revenue sharing via Google Adsense with the author, to donation requests, to just a straight charge.  Also, offer options to print to PDF and author defined time-constrainted access (for example, allow a buyer to access the content for a year).  To help the creators make a sale, you can create a marketplace for content consumers to request content so authors can bid to provide it.  Another feature would be to provide a full text search on all content, but only show an abstract to the consumer before he pays.</li>
+	<li><strong>A Wiki-like Site for Building Matricies. </strong>Make building matricies as easy as creating wiki pages.  I got the idea while I was looking at a feature comparison matrix for some software, and thought wouldn't it great if there was one place I could go to and look up the feature matrix of various types of products?  But taking it a step further, what if you could just tableize anything, and the site will automatically graph or chart it?  What if it also has the ability to join arbitrary tables, what kind of results could you end up with?</li>
+	<li><strong>A Simpler Word Processing/Spreadsheet Site using Templates. </strong> Instead of creating a web-based word processor or spreadsheet application that is comparable in functionality to Word and Excel, I would like to see ones with just very basic functionality, but with a large set of usable templates.  If you provide users canned templates for building the most common documents, I imagine that most users won't miss the bells and whistles in Word/Excel.  The problem of course is how would a user create a template if the application doesn't have all the necessary functionality to build robust templates?  Maybe import them from Word/Excel?</li>
+</ol>

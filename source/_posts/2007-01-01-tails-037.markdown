@@ -1,0 +1,19 @@
+--- 
+wordpress_id: 49
+layout: post
+title: Tails 0.3.7
+wordpress_url: http://blog.codeeg.com/2007/01/01/tails-037/
+permalink: /2007/01/01/tails-037.html
+---
+I've finally gotten tired of telling folks that this and that will be fixed in the next release, and have finally gotten Tails to the point of a 0.3.7 release.  Here's are the highlights this new release:
+<ul>
+	<li>I created a test harness so that I can run Tails through the <a title="microformats tests" href="http://hg.microformats.org/tests">tests from the microformats repository</a>.  I've only gotten hCard and hCalendar tested, and they don't all pass (some do to inconsistencies in the tests, others because they require some extensive rework of the parser which will come later), but the hCard parsing and hCalendar parsing is now better than ever, and the export functions produce results very comparable to <a title="Brian's X2V project" href="http://suda.co.uk/projects/X2V/">Brian Suda's X2V stylesheet</a>.</li>
+	<li>Exporting to vCard has been greatly improved.  Partly through verifying my parser against the tests, but also because Tails will now generate a file with the vCard valid .vcf extension.  This will required a update of the <a title="vCard Tails Script" href="http://codeeg.com/tails/scripts/vcard.tails.js">vCard Tails Script</a>.</li>
+	<li>Exporting to iCal is now supported with the <a title="iCal Tails Script" href="http://codeeg.com/tails/scripts/ical.tails.js">iCal Tails Script</a>.</li>
+	<li>A number of minor parsing tweaks were made to produce better results.</li>
+</ul>
+<a title="Tails Firefox Extension" href="http://blog.codeeg.com/tails-firefox-extension-03/">Download Tails 0.3.7 here.</a>
+
+I'm glad to finally get this release out, as I have some UI changes I'm looking to forward to putting into the next release.  Keep an eye out for it, I hope to get that out shortly.
+
+I hope everyone is having a happy new year!

@@ -1,0 +1,12 @@
+--- 
+wordpress_id: 71
+layout: post
+title: iPhone
+wordpress_url: http://blog.codeeg.com/2007/07/01/iphone/
+permalink: /2007/07/01/iphone.html
+---
+<img class="alignnone size-full wp-image-115" src="/images/wp/iphone.png" alt="" width="300" height="215" />
+
+We stopped by the Apple store at Northpoint today to drop off Amanda's MacBook for some repair work, and picked up an iPhone for Amanda in the process.  I spoke with one of the guys at the store and he said they sold about 700 yesterday, and from the looks of it they still seem to have plenty more (they still had some 8GB's as well).  The store was busy, but we were still able to just walk up and buy one without waiting in line.
+
+And though it seems like some people are having problems activating, we had no problems whatsoever (granted we're already with AT&amp;T).  The phone is a way cool, and I'll probably buy one myself once my phone goes south.

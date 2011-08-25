@@ -1,0 +1,14 @@
+--- 
+wordpress_id: 24
+layout: post
+title: Tails 0.3.1 Update
+wordpress_url: http://blog.codeeg.com/2006/07/16/tails-031-update/
+permalink: /2006/07/16/tails-031-update.html
+---
+Changes in this update:
+<ul>
+	<li>Added tabs to separate the different microformats.</li>
+	<li>Added support for hAtom microformats.</li>
+	<li>Some slight UI tweaks (horizontal scrollbar is now gone).</li>
+</ul>
+In addition, I also added <a href="http://blog.codeeg.com/tails-firefox-extension-03/creating-a-tails-script/">a page documenting the Tails Script creation</a>, and added <a href="http://codeeg.com/tails/scripts/delicious.tails.js">a Tails script for del.icio.us</a> and <a href="http://codeeg.com/tails/scripts/digg.tails.js">digg</a>.  Enjoy.

@@ -1,0 +1,12 @@
+--- 
+wordpress_id: 41
+layout: post
+title: Tails Update 0.3.6
+wordpress_url: http://blog.codeeg.com/2006/10/29/tails-update-036/
+permalink: /2006/10/29/tails-update-036.html
+---
+<span style="color:#0000ee;text-decoration:underline;"><a href="/tails-firefox-extension-03/"><img class="alignnone size-full wp-image-117" src="/images/wp/v0-3-6screenshot.png" alt="" width="500" height="120" /></a></span>
+
+It looks like the code for the notification box in Firefox 2.0 has changed -- this update fixes that problem.  The notification box will still work if you're still on Firefox 1.x.  Thanks to <a title="Jeremy Kitchen's website" href="http://www.scriptkitchen.com/">Jeremy</a> for pointing this out.
+
+<a title="Tails Firefox Extension" href="http://blog.codeeg.com/tails-firefox-extension-03/">Get the update here.</a>
